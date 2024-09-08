@@ -5,4 +5,14 @@
       Adicionar pensamento
     </button>
   </header>
+  <div class="wall" *ngIf="listThoughts.length > 0; else noThoughts">
+    <div *ngFor="let thought of listThoughts">
+      <app-thought [thought]="thought"></app-thought>
+    </div>
+  </div>
+  <ng-template #noThoughts>
+    <div class="not-thoughts ff-inter">
+      Ainda não há pensamentos cadastrados!
+    </div>
+  </ng-template>
 </section>
