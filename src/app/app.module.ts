@@ -3,16 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CreateThoughtComponent } from './components/thoughts/create-thought/create-thought.component';
+import { FormsModule } from '@angular/forms';
+import { ListThoughtsComponent } from './components/thoughts/list-thoughts/list-thoughts.component';
+import { ThoughtComponent } from './components/thoughts/thought/thought.component';
+import { ThoughtService } from './services/thought/thought.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DeleteThoughtComponent } from './components/thoughts/delete-thought/delete-thought.component';
+import { EditThoughtComponent } from './components/thoughts/edit-thought/edit-thought.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    CreateThoughtComponent,
+    ListThoughtsComponent,
+    ThoughtComponent,
+    DeleteThoughtComponent,
+    EditThoughtComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [ThoughtService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
