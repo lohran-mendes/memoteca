@@ -8,7 +8,10 @@
     <b>{{ thought.author }}</b>
   </p>
   <div class="actions">
-    <button class="edit-button">
+    <button
+      class="edit-button"
+      routerLink="/pensamentos/editar-pensamento/{{ thought.id }}"
+    >
       <img
         src="../../../../assets/img/icone-editar.png"
         alt="Ícone de editar"

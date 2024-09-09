@@ -13,6 +13,10 @@ export class ThoughtService {
   getThoughts(): Observable<Thought[]> {
     return this.http.get<Thought[]>(this.API);
   }
+  searchForId(id: string): Observable<Thought> {
+    const url = `${this.API}/${id}`;
+    return this.http.get<Thought>(url);
+  }
   setThoughts(thoughtAdd: Thought): Observable<any> {
     return this.http.post(this.API, thoughtAdd);
   }
@@ -20,8 +24,8 @@ export class ThoughtService {
     const url = `${this.API}/${id}`;
     return this.http.delete<Thought>(url);
   }
-  searchForId(id: string): Observable<Thought> {
-    const url = `${this.API}/${id}`;
-    return this.http.get<Thought>(url);
+  editThought(edit: Thought): Observable<Thought> {
+    const url = `${this.API}/${edit.id}`;
+    return this.http.put<Thought>(url, edit);
   }
 }
