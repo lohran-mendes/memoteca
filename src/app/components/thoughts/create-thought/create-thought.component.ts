@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { Thought } from 'src/app/interface/thought.interface';
+import { ThoughtService } from 'src/app/services/thought/thought.service';
 
 @Component({
   selector: 'app-create-thought',
@@ -6,10 +9,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-thought.component.css'],
 })
 export class CreateThoughtComponent {
-  though = {
-    id: 1,
-    author: 'digite o nome do autor ou fonte',
-    content: 'digite um pensamento',
+  router = inject(Router);
+  service = inject(ThoughtService);
+  though: Thought = {
+    author: '',
+    content: '',
     model: 'model1',
   };
+
+  addThought(though: Thought) {
+    this.service.setThoughts(though).subscribe(() => {
+      this.router.navigate(['/listar-pensamentos']);
+    });
+  }
+  onCancel() {
+    this.router.navigate(['/listar-pensamentos']);
+  }
 }

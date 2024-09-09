@@ -1,22 +1,22 @@
 {
   "thoughts": [
     {
-      "id": 1,
+      "id": "0",
       "author": "Lohran mendes",
-      "model": "modelo1",
+      "model": "model1",
       "content": "Conteúdo para preenchimento e teste do pensamento."
     },
     {
-      "id": 2,
+      "id": "1",
       "author": "Lohran mendes",
-      "model": "modelo2",
+      "model": "model2",
       "content": "Conteúdo para preenchimento e teste do pensamento."
     },
     {
-      "id": 3,
-      "author": "Maria Eduarda Domingos",
-      "model": "modelo2",
-      "content": "Nascer do sol, brisa no mar, A vida corre sem parar. Flores desabrocham, estrelas a brilhar,Tempo que passa, sem avisar. Cores que dançam, vento a soprar, Rios que fluem, pássaros no ar. Nos olhos, o mundo a se revelar, No coração, o sonho de amar. Entrelaçados, destinos a se cruzar, Histórias que o tempo vai guardar. Em cada passo, um novo olhar, Na alma, um eterno caminhar."
+      "id": "3",
+      "author": "lohran",
+      "content": "Estou testando o método addThought",
+      "model": "model3"
     }
   ]
 }
